@@ -54,8 +54,8 @@ The platform supports digital transformation of local hardware businesses while 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/hardware-marketplace.git
-cd hardware-marketplace
+git clone https://github.com/yourusername/computer-shop-management.git
+cd computer-shop-management
 2. Install PHP Dependencies
 bash
 composer install
