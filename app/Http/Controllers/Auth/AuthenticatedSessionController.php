@@ -28,19 +28,19 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         $user = Auth::user();
-        
+
         // Get roles directly using Spatie
         $roles = $user->getRoleNames(); // This returns a collection
-        
+
         // Redirect based on role
         if ($roles->contains('admin')) {
             return redirect()->route('admin.dashboard');
         } elseif ($roles->contains('shop-owner')) {
             return redirect()->route('owner.dashboard');
         } elseif ($roles->contains('employee')) {
-            return redirect()->route('employee.dashboard');
+            return redirect()->route('customer.dashboard');
         }
-        
+
         return redirect()->route('welcome');
     }
 
