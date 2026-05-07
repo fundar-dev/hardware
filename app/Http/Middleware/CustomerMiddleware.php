@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class EmployeeMiddleware
+class CustomerMiddleware
 {
     /**
      * Handle an incoming request.
@@ -18,14 +18,15 @@ class EmployeeMiddleware
     {
         // Check if user is authenticated
         if (!Auth::check()) {
-            return redirect()->route('login')->with('error', 'Please login to access this page.');
+            return redirect()->route('login')
+                ->with('error', 'Please login to access this page.');
         }
-        
-        // Check if user has employee role
-        if (!Auth::user()->hasRole('employee')) {
-            abort(403, 'Unauthorized access. Employee privileges required.');
+
+        // Check if user has customer role
+        if (!Auth::user()->hasRole('customer')) {
+            abort(403, 'Unauthorized access. Customer privileges required.');
         }
-        
+
         return $next($request);
     }
 }

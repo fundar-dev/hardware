@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class EmployeeDashboardController extends Controller
+class CustomerDashboardController extends Controller
 {
     public function index()
     {
         $user = Auth::user();
-        return view('employee.dashboard', compact('user'));
+
+        return view('customer.dashboard', compact('user'));
     }
 }
