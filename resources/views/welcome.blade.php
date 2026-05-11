@@ -42,7 +42,7 @@
                 </a>
             @else
                 <a href="{{ route('login') }}"
-                   class="border px-4 py-2 rounded-lg">
+                   class="border px-4 py-2 rounded-lg bg-teal-600 text-white">
                     Login
                 </a>
 
